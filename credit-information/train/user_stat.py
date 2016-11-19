@@ -1,14 +1,20 @@
 import pandas as pd
 import numpy as np
+from scipy.stats import pearsonr
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 def filter_customer(n, df, prefix, filename):
     a = open(prefix + '_record.txt','a')
+    '''
     a.write(filename)
     a.write(':\n')
     a.write('original shape: ')
     a.write(str(df.shape))
     a.write('\n')
+    '''
     df = df[df.user_id < (n+1)]
+    '''
     a.write('transform shape: ')
     a.write(str(df.shape))
     a.write('\nunique user number: ')
@@ -18,6 +24,7 @@ def filter_customer(n, df, prefix, filename):
     a.write(' % users are missing')
     a.write('\n--------------------------------\n')
     a.close()
+    '''
     return df
 
 def read(fileprename, columnname, datatype, user_number):
@@ -50,6 +57,46 @@ def read_all_cc(datatype):
     
     bankcolumns = ['user_id','record_time','trade_type','trade_money','income']
     bank = read('bank_detail', bankcolumns, datatype, user_number)
+    return overdue, user_info, loan_time, browse_history, bill, bank
+
+def basic_statis_distribution(df):
+    for col in df.columns[2:]:
+        g = sns.kdeplot(df.loc[df.label == 0, col], shade=True)
+        g = sns.kdeplot(df.loc[df.label == 1, col], shade=True)
+        sns.plt.legend(['on time','overdue'])
+        sns.plt.show()
+
+def basic_statis_boxplot(df):
+    for col in df.columns[2:]:
+        g = sns.boxplot(x="label", y=col,  data=df, palette="PRGn")
+        sns.plt.show()
+
+def pearsonr_col(df):
+    for col in df.columns[2:]:
+        print col + ': ',
+        print pearsonr(df.label, df[col])
 
 if __name__ == "__main__":
-    read_all_cc('_train')
+    overdue, user_info, loan_time, browse_history, bill, bank = read_all_cc('_train')
+    new = pd.merge(overdue, user_info, on = 'user_id', how = 'left', left_index = None)
+    new = pd.merge(new, loan_time, on = 'user_id', how = 'left', left_index = None)
+    new.to_csv('basic_info.csv', index = None)
+    #basic_statis_boxplot(new)
+    billnew = bill.drop_duplicates(subset = 'user_id', keep = 'last')
+    test = pd.merge(new, billnew, on = 'user_id', how = 'left')
+    test = test[~pd.isnull(test.bill_time)]
+    basic_statis_distribution(test)
+    basic_statis_boxplot(test)
+    billnew = bill.drop_duplicates(subset = 'user_id', keep = 'first')
+    test = pd.merge(new, billnew, on = 'user_id', how = 'left')
+    test = test[~pd.isnull(test.bill_time)]
+    basic_statis_distribution(test)
+    print test.describe()
+    print browse_history.describe()
+    ac = browse_history[['activity','activity_label']].drop_duplicates(subset = ['activity','activity_label'])
+    print 'activity category {0}'.format(ac.shape[0])
+    activity_counts_per_times = browse_history.groupby(['user_id','browse_time']).count()
+    activity_counts_per_times = activity_counts_per_times.reset_index()
+    activity_times = browse_history.drop_duplicates(subset=['user_id','browse_time']).groupby('user_id')['browse_time'].count()
+    activity_times=activity_times.reset_index()
+    
