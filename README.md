@@ -102,24 +102,24 @@ unique user number: 709<br />
 --------------------------------
 
 # Features of the data
-    - sample imbalance 
-        can adjust the sample rate for different type, try to get close to the online sample balance
-    - browse_history
-        user can do multi activities at a time and the file record users' activity at different time. Many activity can come out from this file, like how many times the user operate, how many times the user take this activity or activity label.
-    - the number of the activities has no pysical meaning, assumption base on the total number an activity taken.
-    - the number of the activities' label has no pysical meaning, assumption base on the total number an activity label taken.
+- sample imbalance 
+    can adjust the sample rate for different type, try to get close to the online sample balance
+- browse_history
+    user can do multi activities at a time and the file record users' activity at different time. Many activity can come out from this file, like how many times the user operate, how many times the user take this activity or activity label.
+- the number of the activities has no pysical meaning, assumption base on the total number an activity taken.
+- the number of the activities' label has no pysical meaning, assumption base on the total number an activity label taken.
 
 # Extract Features
 ## Basic information: education, gender ...
 ## Browse activity (1050):
-    - the total times the costumer browse (1)
-    - the time difference between the first and last browses of the costumer (1)
-    - the frequency of the costumer browse (1)
-    - total_times/frequency/average/min/max of a costumer take for a single activity label (11 different types * 5 = 55)
-    - total_times/frequency of a costumer take for a single activity (216 different types * 2 = 432)
-    - the average/min/max/count of activities number does the costumer take in one browse (4 )
-    - the average/min/max/count of activities number label does the costumer take in one browse (4)
-    - total_times/frequency of a costumer take for a single activity+label (276 different types * 2 = 552)
+- the total times the costumer browse (1)
+- the time difference between the first and last browses of the costumer (1)
+- the frequency of the costumer browse (1)
+- total_times/frequency/average/min/max of a costumer take for a single activity label (11 different types * 5 = 55)
+- total_times/frequency of a costumer take for a single activity (216 different types * 2 = 432)
+- the average/min/max/count of activities number does the costumer take in one browse (4 )
+- the average/min/max/count of activities number label does the costumer take in one browse (4)
+- total_times/frequency of a costumer take for a single activity+label (276 different types * 2 = 552)
     
 ## Bill information
 
