@@ -1,94 +1,94 @@
 # China_Cup
-For China Cup
-The missing value is following:
+For China Cup<br />
+The missing value is following:<br />
 
 # Train
-- overdue:
-original shape: (55596, 2)
-transform shape: (55596, 2)
-unique user number: 55596
+- overdue:<br />
+original shape: (55596, 2)<br />
+transform shape: (55596, 2)<br />
+unique user number: 55596<br />
 0.0 % users are missing
 
 --------------------------------
 
-- user_info:
-original shape: (55596, 6)
-transform shape: (55596, 6)
-unique user number: 55596
+- user_info:<br />
+original shape: (55596, 6)<br />
+transform shape: (55596, 6)<br />
+unique user number: 55596<br />
 0.0 % users are missing
 
 --------------------------------
 
-- loan_time:
-original shape: (55596, 2)
-transform shape: (55596, 2)
-unique user number: 55596
+- loan_time:<br />
+original shape: (55596, 2)<br />
+transform shape: (55596, 2)<br />
+unique user number: 55596<br />
 0.0 % users are missing
 
 --------------------------------
 
-- browse_history:
-original shape: (22919547, 4)
-transform shape: (22919547, 4)
-unique user number: 47330
+- browse_history:<br />
+original shape: (22919547, 4)<br />
+transform shape: (22919547, 4)<br />
+unique user number: 47330<br />
 14.87 % users are missing
 
 --------------------------------
 
-- bill_detail:
-original shape: (2338118, 15)
-transform shape: (2338118, 15)
-unique user number: 53174
+- bill_detail:<br />
+original shape: (2338118, 15)<br />
+transform shape: (2338118, 15)<br />
+unique user number: 53174<br />
 4.36 % users are missing
 
 --------------------------------
 
-- bank_detail:
-original shape: (6070197, 5)
-transform shape: (6070197, 5)
-unique user number: 9294
+- bank_detail:<br />
+original shape: (6070197, 5)<br />
+transform shape: (6070197, 5)<br />
+unique user number: 9294<br />
 83.28 % users are missing
 
 --------------------------------
 
 
 # Test
-- usersID:
-original shape: (13899, 1)
-transform shape: (13899, 1)
-unique user number: 13899
+- usersID:<br />
+original shape: (13899, 1)<br />
+transform shape: (13899, 1)<br />
+unique user number: 13899<br />
 0.0 % users are missing
 
 --------------------------------
 
-- user_info:
-original shape: (13899, 6)
-transform shape: (13899, 6)
-unique user number: 13899
+- user_info:<br />
+original shape: (13899, 6)<br />
+transform shape: (13899, 6)<br />
+unique user number: 13899<br />
 0.0 % users are missing
 
 --------------------------------
 
-- loan_time:
-original shape: (13899, 2)
-transform shape: (13899, 2)
-unique user number: 13899
+- loan_time:<br />
+original shape: (13899, 2)<br />
+transform shape: (13899, 2)<br />
+unique user number: 13899<br />
 0.0 % users are missing
 
 --------------------------------
 
-- browse_history:
-original shape: (5476055, 4)
-transform shape: (5476055, 4)
-unique user number: 11997
+- browse_history:<br />
+original shape: (5476055, 4)<br />
+transform shape: (5476055, 4)<br />
+unique user number: 11997<br />
 13.68 % users are missing
 
 --------------------------------
 
-- bill_detail:
-original shape: (414895, 15)
-transform shape: (414895, 15)
-unique user number: 13643
+- bill_detail:<br />
+original shape: (414895, 15)<br />
+transform shape: (414895, 15)<br />
+unique user number: 13643<br />
 1.84 % users are missing
 
 --------------------------------
@@ -97,7 +97,7 @@ unique user number: 13643
 original shape: (376409, 5)<br />
 transform shape: (376409, 5)<br />
 unique user number: 709<br />
-94.9 % users are missing<br />
+94.9 % users are missing
 
 --------------------------------
 
