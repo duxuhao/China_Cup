@@ -111,7 +111,8 @@ unique user number: 709<br />
 
 # Extract Features
 ## Basic information: 
-- education, gender ...<br />
+- education, gender, etc
+
 ## Browse activity (1050):
 - the total times the costumer browse (1)
 - the time difference between the first and last browses of the costumer (1)
