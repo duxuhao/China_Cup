@@ -93,10 +93,17 @@ if __name__ == "__main__":
     basic_statis_distribution(test)
     print test.describe()
     print browse_history.describe()
+    
     ac = browse_history[['activity','activity_label']].drop_duplicates(subset = ['activity','activity_label'])
     print 'activity category {0}'.format(ac.shape[0])
+    
     activity_counts_per_times = browse_history.groupby(['user_id','browse_time']).count()
     activity_counts_per_times = activity_counts_per_times.reset_index()
     activity_times = browse_history.drop_duplicates(subset=['user_id','browse_time']).groupby('user_id')['browse_time'].count()
     activity_times=activity_times.reset_index()
     
+    ac = browse_history[['activity','activity_label']].groupby('activity_label').count().reset_index().sort('activity')
+    print ac
+    
+    ac = browse_history[['activity','activity_label']].groupby('activity').count().reset_index().sort('activity_label')
+    print ac
