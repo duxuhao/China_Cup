@@ -110,7 +110,8 @@ unique user number: 709<br />
 - the number of the activities' label has no pysical meaning, assumption base on the total number an activity label taken.
 
 # Extract Features
-## Basic information: education, gender ...
+## Basic information: 
+- education, gender ...
 ## Browse activity (1050):
 - the total times the costumer browse (1)
 - the time difference between the first and last browses of the costumer (1)
