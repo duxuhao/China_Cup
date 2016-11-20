@@ -93,11 +93,11 @@ unique user number: 13643
 
 --------------------------------
 
-- bank_detail:
-original shape: (376409, 5)
-transform shape: (376409, 5)
-unique user number: 709
-94.9 % users are missing
+- bank_detail:<br />
+original shape: (376409, 5)<br />
+transform shape: (376409, 5)<br />
+unique user number: 709<br />
+94.9 % users are missing<br />
 
 --------------------------------
 
@@ -118,7 +118,6 @@ unique user number: 709
     - the average/min/max/count of activities number does the costumer take in one browse (4 )
     - the average/min/max/count of activities number label does the costumer take in one browse (4)
     - total_times/frequency of a costumer take for a single activity+label (276 different types * 2 = 552)
-    
     
 ## Bill information
 
